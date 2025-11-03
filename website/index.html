@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
+    />
+    <meta
+      name="description"
+      content="District Roleplay - San Andreas Multiplayer User Control Panel"
+    />
+    <title>District Roleplay | UCP</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-flex">
+        <div class="logo">
+          <span class="logo-mark">DR</span>
+          <span class="logo-text">
+            District<br />
+            <small>Roleplay UCP</small>
+          </span>
+        </div>
+        <nav class="main-nav">
+          <a href="#features">Fitur</a>
+          <a href="#community">Komunitas</a>
+          <a href="#news">Berita</a>
+          <a href="#panel">Panel</a>
+        </nav>
+        <div class="cta-group">
+          <button class="btn ghost" data-open="login-modal">Masuk</button>
+          <a class="btn primary" href="#register">Daftar</a>
+        </div>
+        <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <h1>Panel Pemain Resmi District Roleplay</h1>
+            <p>
+              Kelola karakter SAMP kamu, ikuti event komunitas, cek status
+              server, dan akses semua layanan roleplay dalam satu tempat. Login
+              menggunakan akun UCP untuk mengatur role, keuangan, dan perlengkapanmu.
+            </p>
+            <div class="hero-actions">
+              <a class="btn primary" href="#login">Masuk Panel</a>
+              <a class="btn ghost" href="#explore">Jelajahi Fitur</a>
+            </div>
+            <div class="hero-metrics">
+              <div>
+                <span class="metric-value" id="metric-players">128</span>
+                <span class="metric-label">Pemain Online</span>
+              </div>
+              <div>
+                <span class="metric-value" id="metric-factions">24</span>
+                <span class="metric-label">Fraksi Aktif</span>
+              </div>
+              <div>
+                <span class="metric-value" id="metric-houses">312</span>
+                <span class="metric-label">Properti Dimiliki</span>
+              </div>
+            </div>
+          </div>
+          <div class="hero-preview">
+            <div class="glass-card server-status" id="serverStatus">
+              <span class="badge online">Online</span>
+              <h2>DRP Main Server</h2>
+              <p class="ip">play.districtrp.com:7777</p>
+              <dl>
+                <div>
+                  <dt>Gamemode</dt>
+                  <dd>DRP Roleplay v5.8.2</dd>
+                </div>
+                <div>
+                  <dt>Map Time</dt>
+                  <dd id="mapTime">20:45</dd>
+                </div>
+                <div>
+                  <dt>Peak Players</dt>
+                  <dd id="peakPlayers">210</dd>
+                </div>
+              </dl>
+              <button class="btn primary block" data-open="login-modal">
+                Hubungkan Akun
+              </button>
+            </div>
+
+            <div class="glass-card updates-card">
+              <h3>Patch Notes 5.8.2</h3>
+              <ul>
+                <li>✨ Fitur penitipan kendaraan di rumah safehouse.</li>
+                <li>🛡️ Sistem anti-cheat baru dengan behavior analytics.</li>
+                <li>🎯 Event weekly “District Championship” kini otomatis.</li>
+              </ul>
+              <a class="btn ghost block" href="#news">Lihat semua changelog</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-light" id="features">
+        <div class="container">
+          <div class="section-header">
+            <h2>Semua yang kamu butuhkan dalam satu panel</h2>
+            <p>
+              UCP District Roleplay dirancang untuk mempercepat administrasi
+              roleplay tanpa meninggalkan gaya estetik Los Santos.
+            </p>
+          </div>
+
+          <div class="feature-grid">
+            <article class="feature-card">
+              <div class="icon gradient-blue">
+                <span class="material-symbols-rounded">account_circle</span>
+              </div>
+              <h3>Manajemen Karakter</h3>
+              <p>
+                Atur identitas, status roleplay, histori kejahatan, dan inventory
+                karakter langsung dari panel web.
+              </p>
+              <ul>
+                <li>Edit bio & background RP.</li>
+                <li>Kelola pekerjaan dan skill.</li>
+                <li>Transfer item antar karakter.</li>
+              </ul>
+            </article>
+
+            <article class="feature-card">
+              <div class="icon gradient-purple">
+                <span class="material-symbols-rounded">apartment</span>
+              </div>
+              <h3>Properti & Kendaraan</h3>
+              <p>
+                Lihat status rumah, bisnis, gudang, dan semua kendaraan yang
+                kamu miliki dalam tampilan katalog.
+              </p>
+              <ul>
+                <li>Monitor pajak & perawatan.</li>
+                <li>Remote lock/unlock kendaraan.</li>
+                <li>Dashboard statistik pemasukan toko.</li>
+              </ul>
+            </article>
+
+            <article class="feature-card">
+              <div class="icon gradient-green">
+                <span class="material-symbols-rounded">diversity_3</span>
+              </div>
+              <h3>Komunitas & Fraksi</h3>
+              <p>
+                Ajukan bergabung ke fraksi, pantau roster anggota, dan kelola
+                role promosi khusus pangkat tertentu.
+              </p>
+              <ul>
+                <li>Panel approval permintaan anggota.</li>
+                <li>Logs aktivitas mingguan otomatis.</li>
+                <li>Broadcast pengumuman penting.</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-dark" id="community">
+        <div class="container community-grid">
+          <div>
+            <h2>Koneksikan semua platform komunitasmu</h2>
+            <p>
+              Kaitkan akun Discord, forum, dan social club dalam satu langkah
+              verifikasi. Sinkronisasi role otomatis bikin pengalaman
+              roleplay-mu semakin mulus.
+            </p>
+            <ul class="pill-list">
+              <li>Sinkron role Discord ↔️ UCP.</li>
+              <li>Forum badge otomatis untuk donatur.</li>
+              <li>Notifikasi tiket support real-time.</li>
+              <li>Integrasi API SAMP untuk live stats.</li>
+            </ul>
+          </div>
+          <div class="community-card">
+            <h3>Integrasi Aktif</h3>
+            <div class="integration">
+              <div>
+                <span class="integration-name">Discord Bridge</span>
+                <span class="integration-status success">Connected</span>
+              </div>
+              <small>Roles otomatis diperbarui tiap 15 menit.</small>
+            </div>
+
+            <div class="integration">
+              <div>
+                <span class="integration-name">Forum Invision</span>
+                <span class="integration-status success">Connected</span>
+              </div>
+              <small>Single Sign-On & badge otomatis.</small>
+            </div>
+
+            <div class="integration">
+              <div>
+                <span class="integration-name">SAMP Query Engine</span>
+                <span class="integration-status warning">Limited</span>
+              </div>
+              <small>Query publik dioptimalkan untuk mode RP.</small>
+            </div>
+
+            <div class="integration">
+              <div>
+                <span class="integration-name">Donation Store</span>
+                <span class="integration-status offline">Maintenance</span>
+              </div>
+              <small>Pembayaran akan kembali normal 4 November.</small>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-light" id="panel">
+        <div class="container panel-grid">
+          <div class="panel-preview">
+            <div class="panel-window">
+              <div class="window-bar">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+              <div class="window-content">
+                <div class="window-side">
+                  <span class="window-logo">DR</span>
+                  <nav>
+                    <a class="active">Dashboard</a>
+                    <a>Karakter</a>
+                    <a>Properti</a>
+                    <a>Keuangan</a>
+                    <a>Laporan</a>
+                  </nav>
+                </div>
+                <div class="window-main">
+                  <header>
+                    <h3>Selamat datang, <span id="panelUser">Cody Alvarez</span></h3>
+                    <p>Status roleplay: <strong id="panelStatus">Active</strong></p>
+                  </header>
+                  <div class="cards">
+                    <article>
+                      <h4>Saldo Bank</h4>
+                      <p id="panelBalance">Rp 125.500</p>
+                      <small>Transfer terakhir: 2 jam lalu</small>
+                    </article>
+                    <article>
+                      <h4>Skill Aktual</h4>
+                      <p id="panelSkill">Mechanic Lv.5</p>
+                      <small>Progress 72% sampai Lv.6</small>
+                    </article>
+                    <article>
+                      <h4>Tiket Aktif</h4>
+                      <p id="panelTickets">2</p>
+                      <small>Butuh respon dalam 3 jam</small>
+                    </article>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel-info">
+            <h2>Panel admin & pemain yang modern</h2>
+            <p>
+              Tema gelap default, mode aksesibilitas, audit log komplet, dan
+              integrasi WebSocket memastikan semua pihak dapat bekerja efisien.
+            </p>
+            <div class="stacked-list">
+              <div>
+                <h3>Role Permission Builder</h3>
+                <p>
+                  Drag-and-drop perizinan untuk fraksi, bisnis, maupun tim
+                  administrasi — lengkap dengan template yang bisa dibagikan.
+                </p>
+              </div>
+              <div>
+                <h3>Game Account Recovery</h3>
+                <p>
+                  Sistem self-service untuk reset password, verifikasi dua
+                  langkah, dan pengembalian item dengan log bukti otomatis.
+                </p>
+              </div>
+              <div>
+                <h3>Komunitas Mobile Friendly</h3>
+                <p>
+                  Layout responsif memastikan pemain bisa mengecek status
+                  karakter hanya dengan smartphone.
+                </p>
+              </div>
+            </div>
+
+            <div class="panel-cta">
+              <button class="btn primary" data-open="register-modal">
+                Buat Akun UCP
+              </button>
+              <button class="btn ghost" data-open="login-modal">
+                Sudah punya akun
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-dark news-section" id="news">
+        <div class="container">
+          <div class="section-header">
+            <h2>Update komunitas terbaru</h2>
+            <p>Selalu ikuti kabar terbaru District Roleplay dan event mingguan.</p>
+          </div>
+          <div class="news-grid" id="newsFeed">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+      </section>
+
+      <section class="section-light auth-section" id="login">
+        <div class="container auth-grid">
+          <div class="form-card">
+            <h2>Masuk ke UCP</h2>
+            <form class="form" id="loginForm">
+              <label>
+                Username atau Email
+                <input type="text" name="username" autocomplete="username" required />
+              </label>
+              <label>
+                Password
+                <input
+                  type="password"
+                  name="password"
+                  autocomplete="current-password"
+                  required
+                />
+              </label>
+              <div class="form-actions">
+                <label class="checkbox">
+                  <input type="checkbox" name="remember" />
+                  Ingat saya
+                </label>
+                <a href="#recover">Lupa password?</a>
+              </div>
+              <button class="btn primary block" type="submit">Masuk</button>
+              <p class="form-foot">
+                Belum punya akun? <a href="#register">Daftar sekarang</a>.
+              </p>
+            </form>
+          </div>
+
+          <div class="form-card" id="register">
+            <h2>Daftar akun baru</h2>
+            <form class="form" id="registerForm">
+              <label>
+                Email
+                <input type="email" name="email" required />
+              </label>
+              <label>
+                Username
+                <input type="text" name="newUsername" required />
+              </label>
+              <label>
+                Password
+                <input type="password" name="newPassword" required minlength="6" />
+              </label>
+              <label>
+                Kode Referal (Opsional)
+                <input type="text" name="referral" />
+              </label>
+              <button class="btn ghost block" type="submit">
+                Buat Akun
+              </button>
+              <p class="form-foot small">
+                Dengan mendaftar kamu setuju dengan aturan roleplay District Roleplay.
+              </p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <div class="logo">
+            <span class="logo-mark">DR</span>
+            <span class="logo-text">District Roleplay</span>
+          </div>
+          <p>
+            Server roleplay Indonesia berbasis SAMP dengan fokus cerita
+            komunitas dan ekonomi dinamis sejak 2017.
+          </p>
+        </div>
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#features">Fitur UCP</a></li>
+            <li><a href="#community">Integrasi</a></li>
+            <li><a href="#panel">Panel</a></li>
+            <li><a href="#news">Berita</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Kontak</h4>
+          <ul>
+            <li>Discord: discord.gg/districtrp</li>
+            <li>Email: support@districtrp.com</li>
+            <li>Forums: forum.districtrp.com</li>
+          </ul>
+        </div>
+        <div>
+          <h4>Follow</h4>
+          <div class="socials">
+            <a href="#">YouTube</a>
+            <a href="#">Instagram</a>
+            <a href="#">TikTok</a>
+            <a href="#">Twitter</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <small>&copy; <span id="year"></span> District Roleplay. Semua hak dilindungi.</small>
+      </div>
+    </footer>
+
+    <div class="modal" id="login-modal" aria-hidden="true">
+      <div class="modal-backdrop" data-close="login-modal"></div>
+      <div class="modal-dialog" role="dialog" aria-modal="true">
+        <button class="modal-close" data-close="login-modal" aria-label="Tutup">
+          &times;
+        </button>
+        <h3>Masuk ke UCP</h3>
+        <p>Klik tombol di bawah untuk diarahkan ke halaman login resmi.</p>
+        <a class="btn primary block" href="#login">Buka Form Login</a>
+      </div>
+    </div>
+
+    <div class="modal" id="register-modal" aria-hidden="true">
+      <div class="modal-backdrop" data-close="register-modal"></div>
+      <div class="modal-dialog" role="dialog" aria-modal="true">
+        <button
+          class="modal-close"
+          data-close="register-modal"
+          aria-label="Tutup"
+        >
+          &times;
+        </button>
+        <h3>Daftar Akun UCP</h3>
+        <p>
+          Isi formulir pendaftaran resmi untuk mulai bermain di District Roleplay.
+        </p>
+        <a class="btn primary block" href="#register">Buka Form Pendaftaran</a>
+      </div>
+    </div>
+
+    <script src="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded" defer></script>
+    <script src="assets/js/main.js" defer></script>
+  </body>
+</html>
